@@ -94,7 +94,7 @@ extension String {
         self = String(hexEncoding: data)
     }
 
-    init(base58Endoding multihash: Multihash) {
+    init(base58Encoding multihash: Multihash) {
         let data = Data(encoding: multihash)
         self = String(base58Encoding: data)
     }
