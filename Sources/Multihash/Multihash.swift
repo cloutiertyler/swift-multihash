@@ -1,5 +1,5 @@
 import Foundation
-import Base58String
+import Multibase
 
 public struct Multihash {
     let hash: Hash
@@ -65,8 +65,8 @@ public struct Multihash {
         self.digest = digest
     }
 
-    init?(hexDecoding hexString: String) {
-        guard let data = Data(hexDecoding: hexString) else {
+    init?(base16Decoding base16String: String) {
+        guard let data = Data(base16Decoding: base16String) else {
             return nil
         }
         guard let m = Multihash(decoding: data) else {
@@ -89,9 +89,9 @@ public struct Multihash {
 
 extension String {
 
-    init(hexEncoding multihash: Multihash) {
+    init(base16Encoding multihash: Multihash) {
         let data = Data(encoding: multihash)
-        self = String(hexEncoding: data)
+        self = String(base16Encoding: data)
     }
 
     init(base58Encoding multihash: Multihash) {

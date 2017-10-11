@@ -29,7 +29,7 @@ struct TestCase {
 extension Data {
 
     init(encoding testCase: TestCase) {
-        let hexData = Data(hexDecoding: testCase.hex)!
+        let hexData = Data(base16Decoding: testCase.hex)!
         let codeData = putUVarInt(UInt64(testCase.code))
         let lengthData = putUVarInt(UInt64(hexData.count))
         self = codeData + lengthData + hexData
@@ -55,7 +55,7 @@ class MultihashTests: XCTestCase {
 
     func testEncode() {
         for testCase in testCases {
-            let hexData = Data(hexDecoding: testCase.hex)!
+            let hexData = Data(base16Decoding: testCase.hex)!
             let encodedTestCase = Data(encoding: testCase)
 
             var multihash = Multihash(code: testCase.code, digest: hexData)!
@@ -72,7 +72,7 @@ class MultihashTests: XCTestCase {
 
     func testDecode() {
         for testCase in testCases {
-            let hexData = Data(hexDecoding: testCase.hex)!
+            let hexData = Data(base16Decoding: testCase.hex)!
             let encodedTestCase = Data(encoding: testCase)
 
             let multihash = Multihash(decoding: encodedTestCase)!

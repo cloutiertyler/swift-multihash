@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "Base58String",
-        "repositoryURL": "https://github.com/cloutiertyler/Base58String.git",
+        "package": "Base32",
+        "repositoryURL": "https://github.com/norio-nomura/Base32.git",
         "state": {
           "branch": null,
-          "revision": "496ad09a11f2212643a7413570effc16b7c76506",
-          "version": "0.1.0"
+          "revision": "d1f8bffa131352a8d86f0a1c3ba7c8c89d3ee760",
+          "version": "0.5.4"
         }
       },
       {
@@ -17,6 +17,15 @@
           "branch": null,
           "revision": "31d0f6fa0aa945c09eff091ad26cb5b44e956f79",
           "version": "3.0.1"
+        }
+      },
+      {
+        "package": "Multibase",
+        "repositoryURL": "https://github.com/cloutiertyler/swift-multibase.git",
+        "state": {
+          "branch": null,
+          "revision": "be572dcd59f8bebf886a71bde43b356c83a95ad9",
+          "version": "0.1.0"
         }
       },
       {
